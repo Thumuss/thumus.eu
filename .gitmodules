@@ -4,3 +4,6 @@
 [submodule "backend.thumus.eu"]
 	path = packages/backend
 	url = git@github.com:ThumusLive/backend.thumus.eu.git
+[submodule "docs.thumus.eu"]
+	path = packages/docs
+	url = git@github.com:ThumusLive/docs.thumus.eu.git
