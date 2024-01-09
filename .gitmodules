@@ -7,3 +7,12 @@
 [submodule "docs.thumus.eu"]
 	path = packages/docs
 	url = git@github.com:ThumusLive/docs.thumus.eu.git
+[submodule "packages/bashlike"]
+	path = packages/bashlike
+	url = git@github.com:Thumuss/yash.thumus.eu.git
+[submodule "packages/link"]
+	path = packages/link
+	url = git@github.com:Thumuss/link.thumus.eu.git
+[submodule "packages/frontend"]
+	path = packages/frontend
+	url = git@github.com:Thumuss/frontend.thumus.eu.git
