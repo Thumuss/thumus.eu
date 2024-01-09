@@ -16,9 +16,7 @@ rm -rf build
 mkdir $pbuild;
 
 
-cd $pbase;
-
-cd packages/backend
+cd $pbase/packages/backend
 
 pnpm i &&  
 pnpm run build:base &&  
@@ -32,4 +30,13 @@ mkdir $pbuild/build;
 
 cp -rf $pbase/packages/link $pbuild/build;
 
+cd $pbase/packages/bashlike
 
+bun run build
+wait $!
+
+cd $pbase/packages/frontend
+pnpm i;
+pnpm run build;
+wait $!
+cp -rf out $pbuild/build/frontend
