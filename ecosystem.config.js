@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "backend",
-      script: "./packages",
+      script: "./build/index.js",
       cwd: "./build/",
       //instances: "max",
       //exec_mode: "cluster",
@@ -10,10 +10,5 @@ module.exports = {
         NODE_ENV: "production",
       },
     },
-  ],
-  deploy: {
-    production: {
-
-    }
-  }
+  ]
 };
