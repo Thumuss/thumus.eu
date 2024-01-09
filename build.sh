@@ -1,8 +1,11 @@
 if [ -d "thumus.eu" ]; then
-    cd thumus.eu && git pull origin main;
+    cd thumus.eu && git pull origin main && git submodule update --recursive --remote;
     wait $!
 elif [ ! -d ".git" ]; then
     git clone --recurse-submodules -j8 https://github.com/Thumuss/thumus.eu thumus.eu && cd thumus.eu;
+    wait $!
+else
+    git pull origin main && git submodule update --recursive --remote;
     wait $!
 fi
 
