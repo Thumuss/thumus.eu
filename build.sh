@@ -1,4 +1,7 @@
-if [ ! -d ".git" ]; then
+if [ -d "thumus.eu" ]; then
+    cd thumus.eu && git pull origin main;
+    wait $!
+elif [ ! -d ".git" ]; then
     git clone --recurse-submodules -j8 https://github.com/Thumuss/thumus.eu thumus.eu && cd thumus.eu;
     wait $!
 fi
@@ -9,9 +12,6 @@ pbuild=$(pwd)/build;
 rm -rf build
 mkdir $pbuild;
 
-# cd packages/frontend
-# pnpm i && pnpm run build;
-# cp -rf dist $pbuild/frontend
 
 cd $pbase;
 
@@ -19,11 +19,14 @@ cd packages/backend
 
 pnpm i &&  
 pnpm run build:base &&  
-cp -rf dist $pbuild/backend &&  
-cp source/example.env $pbuild/backend/.env &&  
-cp package*.json $pbuild/backend &&  
-cd $pbuild/backend && 
+cp -rf dist/* $pbuild &&  
+cp source/example.env $pbuild/.env &&  
+cp package*.json $pbuild &&  
+cd $pbuild && 
 npm i --omit=dev;
 
-cd $pbase;
+mkdir $pbuild/build;
+
+cp -rf $pbase/packages/link $pbuild/build;
+
 
