@@ -40,3 +40,5 @@ pnpm i;
 pnpm run build;
 wait $!
 cp -rf out $pbuild/build/frontend
+
+mkdir $pbuild/build/cdn;
