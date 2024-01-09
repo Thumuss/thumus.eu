@@ -1,5 +1,6 @@
 if [ ! -d ".git" ]; then
-    git clone https://github.com/Thumuss/thumus.eu thumus.eu && cd thumus.eu;
+    git clone --recurse-submodules -j8 https://github.com/Thumuss/thumus.eu thumus.eu && cd thumus.eu;
+    wait $!
 fi
 
 pbase=$(pwd)
@@ -15,7 +16,14 @@ mkdir $pbuild;
 cd $pbase;
 
 cd packages/backend
-pnpm i && pnpm run build:base && cp -rf dist $pbuild/backend && cd $pbuild/backend && npm i;
+
+pnpm i &&  
+pnpm run build:base &&  
+cp -rf dist $pbuild/backend &&  
+cp source/example.env $pbuild/backend/.env &&  
+cp package*.json $pbuild/backend &&  
+cd $pbuild/backend && 
+npm i --omit=dev;
 
 cd $pbase;
 
