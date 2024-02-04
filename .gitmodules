@@ -1,12 +1,12 @@
 [submodule "app.thumus.eu"]
 	path = packages/app
-	url = git@github.com:ThumusLive/app.thumus.eu.git
+	url = git@github.com:Thumuss/app.thumus.eu.git
 [submodule "backend.thumus.eu"]
 	path = packages/backend
-	url = git@github.com:ThumusLive/backend.thumus.eu.git
+	url = git@github.com:Thumuss/backend.thumus.eu.git
 [submodule "docs.thumus.eu"]
 	path = packages/docs
-	url = git@github.com:ThumusLive/docs.thumus.eu.git
+	url = git@github.com:Thumuss/docs.thumus.eu.git
 [submodule "packages/bashlike"]
 	path = packages/bashlike
 	url = git@github.com:Thumuss/yash.thumus.eu.git
