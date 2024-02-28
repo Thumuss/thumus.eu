@@ -18,8 +18,8 @@ mkdir $pbuild;
 
 cd $pbase/packages/backend
 
-pnpm i &&  
-pnpm run build:base &&  
+bun i &&  
+bun run build:base &&  
 cp -rf dist/* $pbuild &&  
 cp source/example.env $pbuild/.env &&  
 cp package*.json $pbuild &&  
