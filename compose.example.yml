@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+      - "443:433"
+    environment:
+      #webhook: "discordWebhook"
+      host: example.com
+      #cert: /path/to/cert.pem
+      #key: /path/to/key.pem
+      #ip: 127.0.0.1
+      #redirectHttp: false
+      https: false
